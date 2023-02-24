@@ -1,11 +1,10 @@
-resource "aws_instance" "example" {
-  ami_id                      = "ami-0d50e5e845c552faf"
-  instance_type               = "t2.micro"
-  key_name                    = "mackey"
-  subnet_id                   = "subnet-0ab2fb103e79db61b"
-  aws_security_group_id       = ["sg-039f5dcd7d53d3ee5"]
-  associate_public_ip_address = true
+resource "aws_instance" "test1" {
+  ami                    = data.aws_ami.amazon_linux_2.image_id
+  instance_type          = var.instance_type
+  vpc_security_group_ids = [aws_security_group.main.id]
+  key_name               = var.key_name
   tags = {
-    Name = "test1"
+    Name = "${var.env}-instance"                                # dev-instance, qa-instance, prod-instance
+    Name2 = format("%s-instance", var.env)
   }
 }
