@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    // environment {
-    //     MS_Teams_URL = credentials('ms_teams_url-shs-ue1-sct-001')
-    // }
     stages {
         stage('TF-INIT') {
             steps {
@@ -26,7 +23,7 @@ pipeline {
         }
         stage('TF-APPLY') {
             steps {
-                sh 'terraform destroy -auto-approve'
+                sh 'terraform apply -auto-approve'
             }
         }
     }
@@ -40,3 +37,32 @@ pipeline {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// pipeline {
+//     agent any
+//      environment {
+//          MS_Teams_URL = credentials('ms_teams_url-shs-ue1-sct-001')
+//      }
+
+// pipeline {
+//     agent any
+//      environment {
+//          MS_Teams_URL = credentials('ms_teams_url-shs-ue1-sct-001')
+//      }
