@@ -11,5 +11,5 @@ variable "key_name" {
 variable "env" {
   type        = string
   description = "this variable represents environment"
-  default     = "prod"
+  default     = "Main"
 }
