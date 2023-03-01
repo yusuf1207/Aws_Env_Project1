@@ -23,11 +23,11 @@ pipeline {
                 sh 'terraform plan'
             }
         }
-        stage('TF-APPLY') {
-            steps {
-                sh 'terraform destroy -auto-approve'
-            }
-        }
+        // stage('TF-APPLY') {
+        //     steps {
+        //         sh 'terraform destroy -auto-approve'
+        //     }
+        // }
     }
     post {
         always {
