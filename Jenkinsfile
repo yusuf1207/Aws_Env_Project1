@@ -10,19 +10,25 @@ pipeline {
     }
         stage('TF-VALIDATE') {
             steps {
+                dir("/test/test1") {
                 sh 'terraform validate'
             }
         }
+    }
         stage('TF-FMT') {
             steps {
+                dir("/test/test1") {
                 sh 'terraform fmt'
             }
         }
+    }
         stage('TF-PLAN') {
             steps {
+                dir("/test/test1") {
                 sh 'terraform plan'
             }
         }
+    }
         // stage('TF-APPLY') {
         //     steps {
         //         sh 'terraform destroy -auto-approve'
