@@ -3,9 +3,11 @@ pipeline {
     stages {
         stage('TF-INIT') {
             steps {
+                dir("/test/test1") {                       
                 sh 'terraform init'
             }
         }
+    }
         stage('TF-VALIDATE') {
             steps {
                 sh 'terraform validate'
