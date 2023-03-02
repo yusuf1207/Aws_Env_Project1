@@ -3,28 +3,28 @@ pipeline {
     stages {
         stage('TF-INIT') {
             steps {
-                dir("cd /test/test1") {                       
+                dir("/test/test1") {                       
                 sh 'terraform init'
             }
         }
     }
         stage('TF-VALIDATE') {
             steps {
-                dir("cd /test/test1") {
+                dir("/test/test1") {
                 sh 'terraform validate'
             }
         }
     }
         stage('TF-FMT') {
             steps {
-                dir("cd/ test/test1") {
+                dir("/test/test1") {
                 sh 'terraform fmt'
             }
         }
     }
         stage('TF-PLAN') {
             steps {
-                dir("cd /test/test1") {
+                dir("/test/test1") {
                 sh 'terraform plan'
             }
         }
